@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}hahaha{% endblock %}
+{% block content %}
+<a class="btn btn-primary btn-sm" href='{% url 'bookmark:create' %}'>Add</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Site</th>
+            <th>Url</th>
+            <th>Modify</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for bookmark in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ bookmark.site_name }}</td>
+            <td><a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a></td>
+            <td><a href="{% url 'bookmark:update' bookmark.id %}" class="btn btn-success btn-sm">수정</a></td>
+            <td><a href="{% url 'bookmark:delete' bookmark.id %}" class="btn btn-danger btn-sm">삭제</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
