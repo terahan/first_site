@@ -23,11 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-mos&n+-zu_3#t**2u9ccj_v4b(lwsx2bd50c4t&qp^9p=ze-t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 #ALLOWED_HOSTS = ['naver.com' ]
-#ALLOWED_HOSTS = ['*' ]
 
 
 # Application definition
@@ -121,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/terahan/bookmark/static'
